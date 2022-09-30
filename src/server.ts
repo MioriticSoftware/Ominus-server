@@ -1,11 +1,10 @@
-import ExpressApp from "express";
+import express from "express";
+import routes from './routes'
 
-const app = ExpressApp()
+const app = express()
 const port = process.env.PORT
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
+app.use('/', routes)
 
 app.listen(port, () => {
   console.log(`Ominus server listening on port: ${port}`)
